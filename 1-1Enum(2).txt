@@ -1,0 +1,15 @@
+
+public class FileIO {
+
+    public static void main(String[] args) {
+        for(OperationRule operationRule:OperationRule.values())
+        {
+            System.out.println(operationRule.name());
+        }
+    }
+
+}
+enum OperationRule
+{
+    LENOVO,HP,DELL,APPLE,ACER;
+}

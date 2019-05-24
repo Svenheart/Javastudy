@@ -1,0 +1,25 @@
+import java.io.*;
+
+public class FileIO {
+    public static void main(String[] args) throws Exception {
+        String s = "C:\\Program Files";
+        File file = new File(s);
+        check(file);
+    }
+    static void check(File file)
+    {
+        try{
+            if(file.isDirectory())
+            {
+                System.out.println(file.getName());
+                for(File file1:file.listFiles())
+                {
+                    check(file1);
+                }
+            }
+        }catch (NullPointerException e)
+        {
+            return;
+        }
+    }
+}

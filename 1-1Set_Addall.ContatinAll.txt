@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class FileIO {
+
+    public static void main(String[] args) {
+        ArrayList<String> c1=new ArrayList<>();
+        c1.add("java");
+        c1.add("cpp");
+        c1.add("php");
+        c1.add("c#");
+        c1.add("objective-c");
+        c1.forEach(c->System.out.println(c));
+        HashSet<String> c2=new HashSet<>();
+        c2.addAll(c1);//添加集合中所有元素
+        c2.forEach(c->System.out.println(c));
+        ArrayList<String> c3=new ArrayList<>();
+        c3.add("java");
+        c3.add("cpp");
+        System.out.println(c1.containsAll(c3));//确认是否包含
+    }
+}

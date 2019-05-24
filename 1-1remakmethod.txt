@@ -1,0 +1,49 @@
+public class Test {
+    public static void main(String[] args)
+    {
+        Vehicles v=new Vehicles();
+        System.out.println("属性值：");
+        System.out.println("品牌："+v.Brand("野马"));
+        System.out.println("原产地："+v.CountryofOrigin("中国","四川"));
+        System.out.println("颜色："+v.Color("白色"));
+        System.out.println("车辆状态："+v.Condition("停止"));
+    }
+}
+class Vehicles
+{
+    private String brand="";
+    private String countryofOrigin="";
+    private String color="";
+    private String condition="";
+    private String province="";
+    String Brand(String brand)
+    {
+        this.brand=brand;
+        return this.brand;
+    }
+    String CountryofOrigin(String countryofOrigin)
+    {
+        this.countryofOrigin=countryofOrigin;
+        return countryofOrigin;
+    }
+    String Color(String color)
+    {
+        this.color=color;
+        return this.color;
+    }
+    String Condition(String condition)
+    {
+        if(condition.equals("停止"))
+        {
+            this.condition=condition;
+            return this.condition;
+        }
+        else
+            return "运行";
+    }
+    String CountryofOrigin(String countryofOrigin,String province)
+    {
+        this.province=province;
+        return this.countryofOrigin+this.province;
+    }
+}

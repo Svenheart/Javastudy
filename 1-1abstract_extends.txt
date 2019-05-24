@@ -1,0 +1,37 @@
+public class Test {
+    public static void main(String[] args)
+    {
+
+    }
+}
+abstract class Shape{
+    public abstract void closefigure();
+}
+
+abstract class Rectangle extends Shape{
+    public void closefigure() {}
+    public abstract void length();
+}
+
+abstract class Triangle extends Shape{
+    public void closefigure() {}
+    public abstract void length();
+}
+
+class Circle extends Shape{
+    public void closefigure() {}
+}
+
+class Oval extends Shape {
+    public void closefigure() {}
+}
+
+class EquilateralTriangle extends Triangle{
+    public void closefigure() {}
+    public void length(){}
+}
+
+class Square extends Rectangle{
+    public void closefigure() {}
+    public void length(){}
+}

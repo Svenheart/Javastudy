@@ -1,0 +1,23 @@
+import java.io.*;
+
+public class FileIO {
+    public static void main(String[] args) throws Exception {
+        String s = "C:\\Users\\Administrator\\Desktop\\test";
+        File file = new File(s + "\\test.txt");
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+        String s1;
+        String[] strings=new String[3];
+        int i = 0;
+        while ((s1 = bufferedReader.readLine()) != null) {
+            strings[i] = s1;
+            i++;
+        }
+        bufferedReader.close();
+        for (int j = 0; j < strings.length; j++) {
+            BufferedWriter bufferedWriter=new BufferedWriter(
+                    new FileWriter(new File(s+"\\"+j+".txt")));
+            bufferedWriter.write(strings[j]);
+            bufferedWriter.close();
+        }
+    }
+}

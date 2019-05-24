@@ -1,0 +1,17 @@
+import java.util.*;
+
+public class FileIO {
+
+    public static void main(String[] args) {
+        List<String> list=new ArrayList<>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        String[] strings = new String[list.size()];
+        list.toArray(strings);
+        for(String s:strings)
+        {
+            System.out.print(s+" ");
+        }
+    }
+}

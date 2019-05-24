@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class FileIO {
+
+    public static void main(String[] args) {
+        List<String> list=new ArrayList<>();
+        list.add("java");
+        list.add("cpp");
+        list.add("php");
+        list.add("c#");
+        list.add("objective-c");
+        for(int i=0;i<list.size();i++)
+        {
+            String s=list.get(i).toUpperCase();
+            list.set(i,s);
+            if(i==1)
+            {
+                System.out.println(list.get(i));
+                list.set(i,"c++");
+            }
+        }
+        String s1=list.get(1);
+        String s2=list.get(3);
+        list.set(1,s2);
+        list.set(3,s1);
+        list.forEach(l->System.out.println(l));
+    }
+}

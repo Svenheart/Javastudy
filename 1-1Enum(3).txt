@@ -1,0 +1,34 @@
+
+public class FileIO {
+
+    public static void main(String[] args) {
+
+        for(OperationRule o:OperationRule.values())
+        {
+            System.out.println(o);
+        }
+    }
+
+}
+enum OperationRule
+{
+    LENOVO(1),HP(2),DELL(3),APPLE(4),ACER(5);
+    private int size;
+    OperationRule(int size)
+    {
+        this.size=size;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public String toString()
+    {
+        return name()+"-"+"size="+size;
+    }
+}

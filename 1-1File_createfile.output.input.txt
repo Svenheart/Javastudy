@@ -1,0 +1,20 @@
+import java.io.*;
+
+public class FileIO {
+    public static void main(String[] args) throws Exception {
+        String s = "C:\\Users\\Administrator\\Desktop\\test";
+        File file=new File(s);
+        file.mkdir();
+        file=new File(s+"\\a.txt");
+        file.createNewFile();
+        BufferedWriter bufferedWriter=new BufferedWriter(new FileWriter(file));
+        String s1="孙楷文永远是我大哥！";
+        bufferedWriter.write(s1);
+        bufferedWriter.close();
+        BufferedInputStream bufferedInputStream=new BufferedInputStream(new FileInputStream(file));
+        byte[] bytes=new byte[1024];
+        bufferedInputStream.read(bytes);
+        bufferedInputStream.close();
+        System.out.println(new String(bytes,0,bytes.length));
+    }
+}

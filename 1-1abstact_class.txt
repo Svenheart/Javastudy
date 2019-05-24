@@ -1,0 +1,31 @@
+public class Test {
+    public static void main(String[] args)
+    {
+        Car car=new Car();
+        Motorbike motorbike=new Motorbike();
+        System.out.println(car.NoOfWheels());
+        System.out.println(motorbike.NoOfWheels());
+    }
+}
+abstract class Vehicle
+{
+    public String NoOfWheels()
+    {
+        return "true";
+    }
+}
+class Car extends Vehicle
+{
+    @Override
+    public String NoOfWheels()
+    {
+        return "ËÄÂÖ³µ";
+    }
+}
+class Motorbike extends Vehicle
+{
+    @Override
+    public String NoOfWheels() {
+        return "Ë«ÂÖ³µ";
+    }
+}

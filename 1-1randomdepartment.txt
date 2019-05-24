@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class Test {
+    public static void main(String[] args)
+    {
+        Test t=new Test();
+        Scanner sc=new Scanner(System.in);
+        String a=sc.nextLine();
+        System.out.println(t.department(a));
+    }
+    String department(String name)
+    {
+        Random r=new Random();
+        String s="";
+        switch (r.nextInt(3))
+        {
+            case (0):
+                s=name+"加入D1";
+                break;
+            case (1):
+                s=name+"加入D2";
+                break;
+            case (2):
+                s=name+"加入D3";
+                break;
+            case (3):
+                s=name+"加入D4";
+                break;
+        }
+        return s;
+    }
+}

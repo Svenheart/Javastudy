@@ -1,0 +1,18 @@
+import java.io.*;
+import java.util.Scanner;
+
+public class FileIO {
+    public static void main(String[] args) throws Exception {
+        String s = "C:\\Users\\Administrator\\Desktop\\test\\a.txt";
+        File file=new File(s);
+        save(file);
+    }
+    static void save(File file) throws Exception
+    {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file),"GBK"));
+        bufferedWriter.write(s);
+        bufferedWriter.close();
+    }
+}

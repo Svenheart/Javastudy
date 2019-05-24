@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class FileIO {
+
+    public static void main(String[] args) {
+        ArrayList<Cell> cells=new ArrayList<>();
+        cells.add(new Cell(1,2));//通过这种方式添加进集合的对象的值无法被更改
+        Cell cell=new Cell(2,3);//通过这种方式添加进集合的对象的值便于更改
+        cells.add(cell);	//
+        System.out.println(cell+" "+cells);
+        cell.setA(3);
+        System.out.println(cell+" "+cells);
+    }
+}
+class Cell
+{
+    private int a;
+    private int b;
+    Cell(int a,int b)
+    {
+        this.a=a;
+        this.b=b;
+    }
+
+    public int getA() {
+        return a;
+    }
+
+    public void setA(int a) {
+        this.a = a;
+    }
+
+    public int getB() {
+        return b;
+    }
+
+    public void setB(int b) {
+        this.b = b;
+    }
+}

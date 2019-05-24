@@ -1,0 +1,22 @@
+import java.io.*;
+
+public class FileIO {
+    public static void main(String[] args) throws Exception {
+        String s = "C:\\Users\\Administrator\\Desktop\\test\\test.txt";
+        File file = new File(s);
+        DataOutputStream dataOutputStream=new DataOutputStream(new FileOutputStream(file));
+        dataOutputStream.writeInt(0);
+        dataOutputStream.writeChars("h");
+        dataOutputStream.writeDouble(2.20);
+        dataOutputStream.writeLong(4456);
+        dataOutputStream.writeUTF("ÍÞ¹þ¹þ");
+        dataOutputStream.close();
+        DataInputStream dataInputStream=new DataInputStream(new FileInputStream(file));
+        System.out.println(dataInputStream.readInt());
+        System.out.println(dataInputStream.readChar());
+        System.out.println(dataInputStream.readDouble());
+        System.out.println(dataInputStream.readLong());
+        System.out.println(dataInputStream.readUTF());
+        dataInputStream.close();
+    }
+}

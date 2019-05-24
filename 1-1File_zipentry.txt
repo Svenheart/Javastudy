@@ -1,0 +1,35 @@
+import sun.nio.cs.ext.GBK;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.nio.charset.Charset;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
+import java.util.zip.ZipInputStream;
+
+public class File {
+    public static void main(String[] args) throws Exception {
+        String s = "C:\\Users\\Administrator\\Desktop\\test2";
+        Charset charset=new GBK();
+        java.io.File file=new java.io.File(s+"\\test.zip");
+        ZipFile zipFile=new ZipFile(file, charset);
+        ZipInputStream zipInputStream=new ZipInputStream(new FileInputStream(file));
+        FileOutputStream fileOutputStream;
+        InputStream inputStream;
+        ZipEntry zipEntry;//zipEntry的作用是指向压缩文件中的一个文件
+        while ((zipEntry=zipInputStream.getNextEntry())!=null)
+        {
+            byte[] bytes=new byte[1];
+            inputStream=zipFile.getInputStream(zipEntry);//获取zipEntry当前所指文件的数据流
+            fileOutputStream=new FileOutputStream(s+"\\"+zipEntry.getName());
+            while((inputStream.read(bytes))!=-1)
+            {
+                fileOutputStream.write(bytes,0,bytes.length);
+            }
+            fileOutputStream.close();
+            inputStream.close();
+        }
+        zipInputStream.close();
+    }
+}

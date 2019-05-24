@@ -1,0 +1,52 @@
+public class Test {
+    public static void main(String[] args)
+    {
+        Discount discount=new Discount();
+        discount.setinformation("A",10);
+        System.out.println(discount.add("A",10));
+    }
+}
+class Calculate
+{
+    private String membershipname;
+    int points;
+    void setinformation(String name,int points)
+    {
+        this.membershipname=name;
+        this.points=points;
+    }
+    String getMembershipname()
+    {
+        return this.membershipname;
+    }
+    int getPoints()
+    {
+        return this.points;
+    }
+    int add(String membershipname,int points)
+    {
+        if(membershipname.equals(this.membershipname))
+        {
+            this.points+=points;
+            return this.points;
+        }
+        else
+            return this.points;
+    }
+    int sub(String membershipname,int points)
+    {
+        if(membershipname.equals(this.membershipname))
+        {
+            return this.points-points;
+        }
+        else
+            return points;
+    }
+}
+class Discount extends Calculate
+{
+    int add(String membershipname, int points) {
+        this.points=this.points+(int)(points*0.6);
+            return this.points;
+    }
+}

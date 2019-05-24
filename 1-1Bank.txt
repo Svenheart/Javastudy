@@ -1,0 +1,77 @@
+public class Test {
+    public static void main(String[] args)
+    {
+        ICBank icBank=new ICBank();
+        ABank aBank=new ABank();
+        if(icBank.password("123456").equals("true"))
+        {
+            System.out.println("成功登陆");
+            System.out.println("余额："+icBank.getMoney());
+            System.out.println("取款:"+2000+"\n"+"余额："
+                    +icBank.takeMoney(2000));
+            System.out.println("在线支付："+2000+"余额："
+                    +icBank.onlinePay(200));
+        }
+        //ABank同类
+    }
+}
+interface UnionPay
+{
+    String password(String word);
+    int takeMoney(int num);
+    double getMoney();
+}
+interface ICBC extends UnionPay
+{
+    double onlinePay(double num);
+}
+interface ABOC extends UnionPay
+{
+     double phonePay(double num);
+}
+
+class ICBank implements ICBC
+{
+    String password="123456";
+    int money=10000;
+    public String password(String word){
+        if(this.password.equals(word))
+        {
+            return "true";
+        }
+        else
+            return "false";
+    }
+    public int takeMoney(int num){
+        return this.money-num;
+    }
+    public double getMoney(){
+        return money+2000;
+    }
+    public double onlinePay(double num){
+        return this.money-num;
+    }
+}
+
+class ABank implements ABOC
+{
+    String password="123456";
+    int money=10000;
+    public String password(String word){
+        if(this.password.equals(word))
+        {
+            return "true";
+        }
+        else
+            return "false";
+    }
+    public int takeMoney(int num){
+        return this.money-num;
+    }
+    public double getMoney(){
+        return money+2000;
+    }
+    public double phonePay(double num){
+        return this.money-num;
+    }
+}

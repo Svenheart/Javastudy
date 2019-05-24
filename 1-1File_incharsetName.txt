@@ -1,0 +1,16 @@
+import java.io.*;
+import java.util.Scanner;
+
+public class FileIO {
+    public static void main(String[] args) throws Exception {
+        String s = "C:\\Users\\Administrator\\Desktop\\test\\a.txt";
+        File file=new File(s);
+        save(file);
+    }
+    static void save(File file) throws Exception
+    {
+        BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(new FileInputStream(file),"GBK"));
+        System.out.println(bufferedReader.readLine());
+        bufferedReader.close();
+    }
+}

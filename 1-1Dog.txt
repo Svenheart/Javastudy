@@ -1,0 +1,24 @@
+public class Test {
+    public static void main(String[] args)
+    {
+        Dog dog=new Dog();
+        dog.setDog("Ð¡°×","°×É«",4);
+        System.out.println(dog.getDog());
+    }
+}
+class Dog
+{
+    String name;
+    String color;
+    int age;
+    void setDog(String name,String color,int age)
+    {
+        this.name=name;
+        this.color=color;
+        this.age=age;
+    }
+    String getDog()
+    {
+        return this.name+" "+this.color+" "+this.age+"Ëê";
+    }
+}

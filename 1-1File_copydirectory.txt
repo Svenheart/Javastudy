@@ -1,0 +1,19 @@
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class FileIO {
+    public static void main(String[] args) throws Exception {
+        String s = "C:\\Users\\Administrator\\Desktop\\test";
+        File file = new File(s);
+        for(File file1:file.listFiles())
+        {
+            String oldpath = file1.getPath();
+            String newpath=oldpath.replace("test","test2");
+            Path path=Paths.get(oldpath);
+            Path path1=Paths.get(newpath);
+            Files.copy(path,path1);
+        }
+    }
+}

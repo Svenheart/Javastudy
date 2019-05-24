@@ -1,0 +1,30 @@
+public class Test {
+    public static void main(String[] args)
+    {
+        Person person=new Person();
+        person.setAddress("东方幻想乡");
+        person.setMail("1234567@lingmeng.com");
+        System.out.println(person.getAddress()+"——"+person.getMail());
+    }
+    static class Person
+    {
+        String address;
+        String mail;
+
+        public void setAddress(String address) {
+            this.address = address;
+        }
+
+        public void setMail(String mail) {
+            this.mail = mail;
+        }
+
+        public String getMail() {
+            return mail;
+        }
+
+        public String getAddress() {
+            return address;
+        }
+    }
+}

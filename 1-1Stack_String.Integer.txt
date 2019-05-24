@@ -1,0 +1,16 @@
+import java.util.Stack;
+
+public class FileIO {
+
+    public static void main(String[] args) {
+        Stack<String> stringsStack=new Stack<>();
+        Stack<Integer>  integerStack=new Stack<>();
+        stringsStack.push("ณฬ");
+        stringsStack.push("มี");
+        integerStack.push(1);
+        integerStack.push(2);
+        stringsStack.forEach(s -> System.out.println(s));
+        integerStack.forEach(i->System.out.println(i));
+    }
+
+}

@@ -1,0 +1,36 @@
+import java.util.*;
+
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Test {
+    public static void main(String[] args)
+    {
+        Multiplication multiplication=new Multiplication();
+        Scanner sc=new Scanner(System.in);
+        if(sc.hasNextInt())
+        {
+            int a=sc.nextInt();
+            int b=sc.nextInt();
+            System.out.println(multiplication.Mul(a,b));
+        }
+        else if(sc.hasNextDouble())
+        {
+            double a=sc.nextDouble();
+            double b=sc.nextDouble();
+            System.out.println(multiplication.Mul(a,b));
+        }
+    }
+}
+class Multiplication
+{
+    int Mul(int num1,int num2)
+    {
+        return num1*num2;
+    }
+    double Mul(double num1,double num2)
+    {
+        return num1*num2;
+    }
+}

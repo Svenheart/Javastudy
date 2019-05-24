@@ -1,0 +1,16 @@
+import java.io.*;
+import java.util.Properties;
+
+public class FileIO {
+    public static void main(String[] args) throws Exception {
+        String s = "C:\\Users\\Administrator\\Desktop\\test\\b.properties";
+        File file=new File(s);
+        Properties properties=new Properties();
+        properties.setProperty("name","root");
+        properties.setProperty("phone","10086");
+        properties.setProperty("key","value");
+        properties.setProperty("pass","liu");
+        properties.store(new FileWriter(file,true),"孙楷文永远是我大哥！");
+        properties.load(new FileReader(file));
+    }
+}

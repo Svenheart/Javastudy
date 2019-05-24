@@ -1,0 +1,14 @@
+import java.io.*;
+import java.util.Properties;
+
+public class FileIO {
+    public static void main(String[] args) throws Exception {
+        String s = "C:\\Users\\Administrator\\Desktop\\test\\a.properties";
+        File file=new File(s);
+        Properties properties=new Properties();
+        properties.load(new FileReader(file));
+        System.out.println(properties.getProperty("name"));
+        System.out.println(properties.getProperty("pass"));
+        System.out.println(properties.getProperty("key"));
+    }
+}

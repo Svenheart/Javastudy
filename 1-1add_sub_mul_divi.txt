@@ -1,0 +1,55 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Test {
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        Calculator c=new Calculator();
+        c.value(a,b);
+        System.out.println("两数相加结果为："+c.addition());
+        System.out.println("两数相减结果为："+c.subtration());
+        System.out.println("两数相乘结果为："+c.multiplication());
+        System.out.println("两数相除结果为："+c.division());
+    }
+
+}
+class Calculator
+{
+    private int n1;
+    private int n2;
+    void value(int n1,int n2)
+    {
+        this.n1=n1;
+        this.n2=n2;
+    }
+    int addition()
+    {
+        int i=n1+n2;
+        return i;
+    }
+    int subtration()
+    {
+        int i=n1-n2;
+        return i;
+    }
+    int multiplication()
+    {
+        int i=n1*n2;
+        return i;
+    }
+    BigDecimal division()
+    {
+        double i=n1/1.0/n2;
+        BigDecimal b=new BigDecimal(i).setScale(2,RoundingMode.HALF_UP);
+        return b;
+    }
+}

@@ -1,0 +1,29 @@
+import java.io.*;
+
+public class FileIO implements Serializable {
+    String name;
+    int age;
+    String gender;
+    int salary;
+    FileIO(String name,int age,String gender,int salary)
+    {
+        this.name=name;
+        this.age=age;
+        this.gender=gender;
+        this.salary=salary;
+    }
+    public static void main(String[] args) throws Exception {
+           FileIO fileIO=new FileIO("ÕÅÈý",15,"ÄÐ",4000);
+           String s="C:\\Users\\Administrator\\Desktop\\test\\test.txt";
+           File file=new File(s);
+           ObjectOutputStream objectOutputStream=new ObjectOutputStream(new FileOutputStream(file));
+           objectOutputStream.writeObject(fileIO);
+           objectOutputStream.close();
+           ObjectInputStream objectInputStream=new ObjectInputStream(new FileInputStream(file));
+           FileIO fileIO1=(FileIO) objectInputStream.readObject();
+           System.out.println(fileIO1.name);
+           System.out.println(fileIO1.age);
+           System.out.println(fileIO1.gender);
+           System.out.println(fileIO1.salary);
+    }
+}

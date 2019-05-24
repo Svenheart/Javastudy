@@ -1,0 +1,44 @@
+import java.util.*;
+
+public class FileIO {
+
+    public static void main(String[] args) {
+        Person person=new Person("程",123456789);
+        Person person1=new Person("琳",123456789);
+        if(person.equals(person1))
+            System.out.println("两人为同一人");
+    }
+}
+class Person
+{
+    private String name;
+    private long id;
+
+    Person(String name,long id)
+    {
+        this.name=name;
+        this.id=id;
+    }
+
+    public boolean equals(Person person) {
+        if(id==person.id)
+            return true;
+        return false;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+}

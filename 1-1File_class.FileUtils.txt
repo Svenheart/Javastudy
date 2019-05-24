@@ -1,0 +1,30 @@
+import java.io.*;
+
+public class FileIO {
+    public static void main(String[] args) throws Exception {
+        String s = "C:\\Users\\Administrator\\Desktop\\test\\a.txt";
+        String s1 = "C:\\Users\\Administrator\\Desktop\\test\\b.txt";
+        File file=new File(s);
+        File file1=new File(s1);
+        FileUtils fileUtils=new FileUtils();
+        fileUtils.copy(file,file1);
+    }
+    static class FileUtils
+    {
+        void copy(File oldfile,File newfile)
+        {
+            try {
+                BufferedInputStream bufferedInputStream=new BufferedInputStream(new FileInputStream(oldfile));
+                BufferedOutputStream bufferedOutputStream=new BufferedOutputStream(new FileOutputStream(newfile));
+                byte[] bytes=new byte[1024];
+                bufferedInputStream.read(bytes);
+                bufferedInputStream.close();
+                bufferedOutputStream.write(bytes,0,bytes.length);
+                bufferedOutputStream.close();
+            }catch (Exception e)
+            {
+
+            }
+        }
+    }
+}

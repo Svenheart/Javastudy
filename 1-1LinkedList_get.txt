@@ -1,0 +1,25 @@
+import java.util.LinkedList;
+
+public class FileIO {
+    public static LinkedList<Integer> linkedList = new LinkedList<>();
+    public static void main(String[] args) {
+        FileIO fileIO=new FileIO();
+        linkedList.add(1);
+        linkedList.add(8);
+        linkedList.add(6);
+        linkedList.add(4);
+        linkedList.add(5);
+        System.out.println(fileIO.top());
+        System.out.println(fileIO.pop());
+        System.out.println(fileIO.pop());
+    }
+    public int top()
+    {
+        return linkedList.getFirst();
+    }
+    public int pop()
+    {
+        return linkedList.removeFirst();
+    }
+}
+

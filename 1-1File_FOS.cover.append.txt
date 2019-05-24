@@ -1,0 +1,13 @@
+import java.io.*;
+
+public class FileIO {
+    public static void main(String[] args) throws Exception {
+        String s = "C:\\Users\\Administrator\\Desktop\\test\\a.txt";
+        File file=new File(s);
+        String s1="¿¬ÎÄ´óÀÐÅ£Åú£¡";
+        FileOutputStream fileOutputStream=new FileOutputStream(file);
+        fileOutputStream.write(s1.getBytes());
+        fileOutputStream=new FileOutputStream(file,true);
+        fileOutputStream.write(s1.getBytes());
+    }
+}

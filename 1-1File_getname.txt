@@ -1,0 +1,14 @@
+import java.io.*;
+
+public class FileIO {
+    public static void main(String[] args) throws Exception {
+        String s = "C:\\Program Files";
+        File file = new File(s);
+        String[] strings=file.list();
+        for (int i=0;i<strings.length;i++)
+        {
+            if(strings[i].endsWith(".txt"))
+            System.out.println(strings[i]);
+        }
+    }
+}

@@ -1,0 +1,62 @@
+public class Test {
+    public static void main(String[] args)
+    {
+        Auto auto=new Auto();
+        auto.setSpeed(120);
+        System.out.println(auto.Speed_UP(20)+"——"+ auto.Speed_DOWN(20));
+        Car car=new Car();
+        car.setSpeed(120);
+        System.out.println(car.Speed_UP(20)+"——"+ car.Speed_DOWN(20));
+        System.out.println(car.Status(true)+"——"+car.CD("今宵是飘逸的自我主义者！"));
+    }
+}
+class Auto
+{
+    int num;
+    String color;
+    double weight;
+    double speed;
+    public double setSpeed(double speed) {
+        this.speed = speed;
+        return this.speed;
+    }
+
+    double Speed_UP(double speed)
+    {
+        this.speed+=speed;
+        return this.speed;
+    }
+    double Speed_DOWN(double speed)
+    {
+        this.speed-=speed;
+        return this.speed;
+    }
+}
+class Car   extends Auto
+{
+    boolean Air_conditioner;
+    String CD;
+    double Speed_DOWN(double speed) {
+        double s=this.speed;
+        s-=speed/2;
+        return s;
+    }
+    double Speed_UP(double speed) {
+        double s=this.speed;
+        s+=speed/2;
+        return s;
+    }
+    String Status(boolean bool)
+    {
+        this.Air_conditioner=bool;
+        if(this.Air_conditioner)
+            return "空调正在运作！";
+        else
+            return "空调停止运作！";
+    }
+    String CD(String cd)
+    {
+        this.CD=cd;
+        return this.CD;
+    }
+}

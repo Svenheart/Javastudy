@@ -1,0 +1,29 @@
+public class FileIO {
+    private String  a;
+
+    public FileIO(String s) {
+        this.a=s;
+    }
+
+    public static void main(String[] args) {
+        FileIO fileIO=new FileIO("楷文牛批");
+        FileIO fileIO1=new FileIO("楷文牛批");
+        System.out.println(fileIO.hashCode()+" "+fileIO1.hashCode()+
+                "\n"+fileIO.equals(fileIO1));
+    }
+    public int hashCode()
+    {
+        return a.hashCode();
+    }
+    public boolean equals(Object o)
+    {
+        if(o instanceof FileIO)
+        {
+            FileIO fileIO=(FileIO)o;
+            if(a==fileIO.a)
+                return true;
+            return false;
+        }
+        return false;
+    }
+}

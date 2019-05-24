@@ -1,0 +1,13 @@
+import java.util.Scanner;
+import java.util.Random;
+public class Test {
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        String s1=sc.nextLine();
+        String s2=sc.nextLine();
+        System.out.println("select *from book where 图书名="+s
+        +" and 作者="+s1+" and 出版社="+s2);
+    }
+}

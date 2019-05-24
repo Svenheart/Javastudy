@@ -1,0 +1,19 @@
+import java.io.*;
+
+public class FileIO {
+    public static void main(String[] args) throws Exception {
+        String s = "C:\\Users\\Administrator\\Desktop\\test\\1.txt";
+        File file = new File(s);
+        BufferedReader bufferedReader=new BufferedReader(new FileReader(file));
+        StringBuilder stringBuilder=new StringBuilder();
+        String i;
+        while ((i=bufferedReader.readLine())!=null)
+        {
+            stringBuilder.append(i);
+        }
+        BufferedWriter bufferedWriter=new BufferedWriter(new FileWriter(file));
+        bufferedWriter.write(stringBuilder.toString(),0,stringBuilder.length());
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}

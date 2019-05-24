@@ -1,0 +1,40 @@
+public class FileIO {
+    private int top=-1;
+    private int[] stack=new int[7];
+    public static void main(String[] args) {
+        FileIO fileIO=new FileIO();
+        fileIO.push(1);
+        fileIO.push(2);
+        fileIO.push(3);
+        fileIO.push(4);
+        fileIO.push(5);
+        try{
+            for(int a:fileIO.getStack())
+            {
+                System.out.println(a+" Õ»¶¥£º"+fileIO.top()+" µ¯³öÕ»¶¥£º"+fileIO.pop());
+            }
+        }catch(ArrayIndexOutOfBoundsException e)
+        {
+            e.getMessage();
+        }
+
+    }
+
+    void push(int i)
+    {
+        top++;
+        stack[top]=i;
+    }
+    int top()
+    {
+        return stack[top];
+    }
+    int pop()
+    {
+        return stack[top--];
+    }
+    public int[] getStack() {
+        return stack;
+    }
+}
+

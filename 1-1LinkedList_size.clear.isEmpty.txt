@@ -1,0 +1,15 @@
+import java.util.*;
+
+public class FileIO {
+
+    public static void main(String[] args) {
+        LinkedList<String> linkedList=new LinkedList<>();
+        linkedList.add("java");
+        linkedList.add("php");
+        linkedList.add("c#");
+        System.out.println(linkedList.size());
+        System.out.println(linkedList.isEmpty());
+        linkedList.clear();
+        System.out.println(linkedList.isEmpty());
+    }
+}

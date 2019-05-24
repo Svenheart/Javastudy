@@ -1,0 +1,19 @@
+import java.util.*;
+
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Test {
+    public static void main(String[] args)
+    {
+        Date time=new Date();
+        long day=time.getTime();
+        day+=24*60*60*1000;
+        System.out.println(time.getTime());
+        System.out.println(day);
+        time.setTime(day);
+        System.out.println(time);
+
+    }
+}

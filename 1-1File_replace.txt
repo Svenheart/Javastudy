@@ -1,0 +1,19 @@
+import java.io.*;
+
+public class FileIO {
+    public static void main(String[] args) throws Exception {
+        String s="C:\\Users\\Administrator\\Desktop\\test\\1.txt";
+        File file=new File(s);
+        BufferedReader bufferedReader=new BufferedReader(new FileReader(file));
+        CharArrayWriter charArrayWriter=new CharArrayWriter();
+        String a;
+        while((a = bufferedReader.readLine())!=null)
+        {
+            charArrayWriter.write(a.replace("456","ÕÅÈý")+"\r\n");
+        }
+        bufferedReader.close();
+        BufferedWriter bufferedWriter=new BufferedWriter(new FileWriter(file));
+        charArrayWriter.writeTo(bufferedWriter);
+        bufferedWriter.close();
+    }
+}

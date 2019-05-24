@@ -1,0 +1,16 @@
+import java.io.*;
+
+public class FileIO {
+    public static void main(String[] args) throws Exception {
+        String s = "C:\\Users\\Administrator\\Desktop\\test\\a.txt";
+        File file=new File(s);
+        BufferedInputStream bufferedInputStream=new BufferedInputStream(new FileInputStream(file));
+        file=new File(s.replace("a.txt","b.txt"));
+        BufferedOutputStream bufferedOutputStream=new BufferedOutputStream(new FileOutputStream(file));
+        byte[] bytes=new byte[1024];
+        bufferedInputStream.read(bytes);
+        bufferedInputStream.close();
+        bufferedOutputStream.write(bytes,0,bytes.length);
+        bufferedOutputStream.close();
+    }
+}

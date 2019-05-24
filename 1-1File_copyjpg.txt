@@ -1,0 +1,20 @@
+import java.io.*;
+
+public class FileIO {
+    public static void main(String[] args) throws Exception {
+        String s = "C:\\Users\\Administrator\\Desktop\\test\\1.jpg";
+        String s1 = "C:\\Users\\Administrator\\Desktop\\test\\2.jpg";
+        File file = new File(s);
+        File file1=new File(s1);
+        FileInputStream fileInputStream=new FileInputStream(file);
+        FileOutputStream fileOutputStream=new FileOutputStream(file1);
+        byte[] bytes=new byte[1024*1024];
+        int i=-1;
+        while ((i=fileInputStream.read(bytes))!=-1)
+        {
+            fileOutputStream.write(bytes,0,i);
+        }
+        fileInputStream.close();
+        fileOutputStream.close();
+    }
+}

@@ -1,0 +1,25 @@
+public class Test {
+    public static void main(String[] args)
+    {
+        Outer outer=new Outer();
+        outer.showOuter();
+    }
+}
+class Outer
+{
+    String name;
+    int num1=1;
+    int num2=2;
+    void showOuter()
+    {
+        class Inner
+        {
+            void showInner()
+            {
+                System.out.println(num1+"-"+num2);
+            }
+        }
+        Inner inner=new Inner();
+        inner.showInner();
+    }
+}

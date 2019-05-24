@@ -1,0 +1,19 @@
+public class Test {
+    public static void main(String[] args)
+    {
+        Person.Inner    inner=new Person.Inner();
+        System.out.println(inner.test());
+
+    }
+}
+class Person
+{
+    static String name="²©ÀöÁéÃÎ";
+    static class Inner
+    {
+        String test()
+        {
+            return  name;
+        }
+    }
+}

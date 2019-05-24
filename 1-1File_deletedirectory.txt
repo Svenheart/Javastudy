@@ -1,0 +1,20 @@
+import java.io.*;
+
+public class FileIO {
+    public static void main(String[] args) throws Exception {
+        String s = "C:\\Users\\Administrator\\Desktop\\a";
+        File file=new File(s);
+        deletedirectory(file);
+    }
+    static void deletedirectory(File file)
+    {
+        if(file.list()!=null)
+        {
+            for(File file1:file.listFiles())
+            {
+                deletedirectory(file1);
+            }
+        }
+        file.delete();
+    }
+}

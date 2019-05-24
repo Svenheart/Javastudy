@@ -1,0 +1,18 @@
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Vector;
+
+public class FileIO {
+
+    public static void main(String[] args) {
+        Vector<Integer> vector=new Vector<>();
+        vector.add(111111);
+        vector.add(11111);
+        vector.add(1111);
+        vector.add(111);
+        vector.add(11);
+        vector.add(1);
+        System.out.println(Collections.max(vector));
+    }
+
+}

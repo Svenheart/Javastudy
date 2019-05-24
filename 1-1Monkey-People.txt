@@ -1,0 +1,34 @@
+public class Test {
+    public static void main(String[] args)
+    {
+        Monkey  monkey=new Monkey();
+        People  people=new People();
+        monkey.speak();
+        people.speak();
+        people.think();
+    }
+}
+interface Think
+{
+    public abstract void think();
+}
+class Monkey
+{
+    public void speak()
+    {
+        System.out.println("咿咿呀呀……");
+    }
+}
+class People extends Monkey implements  Think
+{
+    public void think()
+    {
+        System.out.println("别说话！认真思考");
+    }
+
+    @Override
+    public void speak()
+    {
+        System.out.println("小样的，不错嘛会说话了！");
+    }
+}

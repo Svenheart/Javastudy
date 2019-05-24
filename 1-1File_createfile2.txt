@@ -1,0 +1,15 @@
+import java.io.*;
+
+public class FileIO {
+    public static void main(String[] args) throws Exception {
+        String s = "C:\\Users\\Administrator\\Desktop\\a";
+        String s1="C:\\Users\\Administrator\\Desktop\\a\\b";
+        String s2="C:\\Users\\Administrator\\Desktop\\a\\b\\c";
+        File file=new File(s);
+        file.mkdir();
+        file=new File(s1);
+        file.mkdir();
+        file=new File(s2);
+        file.mkdir();
+    }
+}

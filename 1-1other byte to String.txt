@@ -1,0 +1,21 @@
+public class Test {
+    public static void main(String[] args)
+    {
+        int a=0;
+        double b=2.001d;
+        short c=-2;
+        byte d=-128;
+        long l=775565457;
+        float f=2.513f;
+        boolean B=true;
+        char ch='a';
+        System.out.println(Integer.toString(a));
+        System.out.println(Double.toString(b));
+        System.out.println(Short.toString(c));
+        System.out.println(Byte.toString(d));
+        System.out.println(Long.toString(l));
+        System.out.println(Float.toString(f));
+        System.out.println(Boolean.toString(B));
+        System.out.println(Character.toString(ch));
+    }
+}

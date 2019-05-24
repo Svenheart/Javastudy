@@ -1,0 +1,43 @@
+//枚举类
+public class FileIO {
+
+    public static void main(String[] args) {
+        for(Product product:Product.values())
+        {
+            System.out.println(product.toString());
+        }
+    }
+
+}
+enum Product
+{
+    苹果("苹果","红色"),香蕉("香蕉","黄色");
+    private String name;
+    private String color;
+    Product(String name,String color)
+    {
+        this.name=name;
+        this.color=color;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String toString()
+    {
+        return "name='" + name +" \' "+ ", color='" + color + '\'';
+    }
+}

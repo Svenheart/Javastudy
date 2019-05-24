@@ -1,0 +1,63 @@
+public class Test {
+    public static void main(String[] args)
+    {
+        UnionPay unionPay=new UnionPay();
+        System.out.println(unionPay.phonePay("银联工商",
+                500));
+        System.out.println(unionPay.phonePay("银联农行",
+                500));
+        System.out.println("总余额（含可透支金额2000）："
+                +unionPay.getMoney());
+    }
+}
+interface UnionPayATM
+{
+    String password(String word);
+    int takeMoney(int num);
+    double getMoney();
+}
+interface ABOC
+{
+     double phonePay(double num);
+}
+
+class UnionPay implements UnionPayATM
+{
+    String password="123456";
+    int money=10000;
+    String s="银联农行";
+    public String password(String word){
+        if(this.password.equals(word))
+        {
+            return "true";
+        }
+        else
+            return "false";
+    }
+    public int takeMoney(int num){
+        return this.money-num;
+    }
+    public double getMoney(){
+        return money+2000;
+    }
+    String phonePay(String bankname,int num)
+    {
+        class Aboc implements ABOC
+        {
+            public double phonePay(double num)
+            {
+                System.out.println("成功支付");
+                money-=num;
+                return money;
+            }
+        }
+        if(this.s.equals(bankname))
+        {
+            Aboc aboc=new Aboc();
+            return "成功支付电话费"+String.valueOf(num)+"\n账户" +
+                    "余额："+String.valueOf(aboc.phonePay(num));
+        }
+        else
+            return "支付电话费功能只支持农行卡";
+    }
+}

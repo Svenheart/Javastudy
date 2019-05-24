@@ -1,0 +1,12 @@
+import java.util.*;
+
+public class Test {
+    public static void main(String[] args)
+    {
+        Calendar c=Calendar.getInstance();
+        c.getTime();
+        c.add(Calendar.YEAR,1);
+        c.add(Calendar.MONTH,-3);
+        System.out.println(c.getTime());
+    }
+}

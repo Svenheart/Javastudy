@@ -1,0 +1,25 @@
+public class Test {
+    public static void main(String[] args)
+    {
+        Address address=new Address();
+        System.out.println(address.information());
+
+    }
+}
+class Address
+{
+    String country="中国";
+    String province="重庆";
+    String city="万州";
+    String street="上海大道";
+    String zipcode="404100";
+    String information()
+    {
+        String s="国家："+this.country+
+                "\n省份："+this.province+
+                "\n城市："+this.city+
+                "\n街道："+this.street+
+                "\n邮编："+this.zipcode;
+        return s;
+    }
+}

@@ -1,0 +1,22 @@
+import java.io.*;
+
+public class FileIO {
+    public static void main(String[] args) throws Exception {
+        String s1="C:\\Users\\Administrator\\Desktop\\test\\a.txt";
+        String s2="C:\\Users\\Administrator\\Desktop\\test2\\a.txt";
+        File file1=new File(s1);
+        File file2=new File(s2);
+        BufferedInputStream bufferedInputStream=new BufferedInputStream(new FileInputStream(file1));
+        BufferedOutputStream bufferedOutputStream=new BufferedOutputStream(new FileOutputStream(file2));
+        byte[] bytes=new byte[1];
+        while(bufferedInputStream.read(bytes)!=-1)
+        {
+            bufferedOutputStream.write(bytes,0,bytes.length);
+        }
+        bufferedOutputStream.close();
+        bufferedInputStream.close();
+
+        file1.delete();
+        System.out.println("文件移动完毕");
+    }
+}
